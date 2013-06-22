@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>conditions</title>
+</head>
+<body>
+<p>click the button to get a "Good evening" greating if the time less than 20,else "Good evening"</p>
+<button type="button" onclick="myFunction()">try it!</button>
+<p id="greating"></p>
+<button type="button" onclick="switchFunction()">Click it!</button>
+<p id="day"></p>
+<script>
+
+    function myFunction() {
+        var x = "";
+        var d = new Date();
+        var time = d.getHours();
+        if (time < 20) {
+            x = "Good day"
+        }
+        else {
+            x = "Good evening"
+        }
+        document.getElementById("greating").innerHTML = x;
+    }
+
+    function switchFunction() {
+        var x;
+        var d = new Date().getDay();
+        switch (d) {
+            case 0:
+                x = "Today it's sunday";
+                break;
+            case 1:
+                x = "Today it's monday";
+                break;
+            case 2:
+                x = "Today it's tuesday";
+                break;
+            case 3:
+                x = "Today it's wednesday";
+                break;
+//            case 4:
+//                x = "Today it's thursday";
+//                break;
+            case 5:
+                x = "Today it's friday";
+                break;
+            case 6:
+                x = "Today it's saturday";
+                break;
+            default :
+                x="Looking forward the weekend"
+        }
+        document.getElementById("day").innerHTML=x;
+    }
+
+</script>
+</body>
+</html>

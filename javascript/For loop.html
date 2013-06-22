@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For loop</title>
+</head>
+<body>
+<script>
+    var cars = ["volvo", "bmw", "saab", "Ford"];
+    for (var i = 0; i < cars.length; i++) {
+        console.log(cars[i])
+        document.write(cars[i] + "<br>");
+    }
+
+
+    function disableselect(e) {
+        return false
+    }
+    function reEnable() {
+        return true
+    }
+    document.onselectstart = function () {
+        return false;
+    }
+    if (window.sidebar) {
+        document.onmousedown = disableselect
+        document.onmousedown = function() {return true;}
+       // document.onClick = reEnable
+    }
+</script>
+</body>
+</html>
+
+
