@@ -6,11 +6,6 @@ from os import makedirs, path
 
 from bs4 import BeautifulSoup
 
-
-def get_next_urls(urls):
-    pass
-
-
 def save_content(html, url):
     p = urlparse(url).path
     if p[-1:] == "/":
@@ -50,9 +45,6 @@ def get_and_extract_links(url):
     return urls, html
 
 
-def save_html(url, html):
-    pass
-
 
 def main():
     seed = 'http://www.ldoceonline.com/School-topic/master_1'
@@ -67,7 +59,6 @@ def main():
         print "download", url, "has", len(to_be_downloaded), "urls remaining", "downloaded", len(downloaded)
         urls, html = get_and_extract_links(url)
         downloaded.add(url)
-        save_html(seed, html)
         for url in urls:
             if seed in url and url[:4] == "http" and url not in downloaded:
                 to_be_downloaded.append(url)
@@ -75,4 +66,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-__author__ = 'nancy'
+
