@@ -50,7 +50,7 @@ class BST(object):
         big = self.big
 
         while big:
-            print(big.value, '-->', end='')
+            print big.value, '-->',
             big = big.big
 
     def delete(self, value):
@@ -162,6 +162,7 @@ def main():
     bst = BST()
     for i in [3, 5, 1, 4, 8, 0, 11, 16, 9, 10]:
         bst.insert(i)
+    print(bst.find(90))
 
         # bst.in_order_print()
 
@@ -181,9 +182,9 @@ if __name__ == '__main__':
 
     main()
 
-    arr = list(range(10))
-    t = arr[:]
-    t.append(11)
-    t[1] = 3
-    print(arr)
-    print(t)
+    # arr = list(range(10))
+    # t = arr[:]
+    # t.append(11)
+    # t[1] = 3
+    # print(arr)
+    # print(t)
