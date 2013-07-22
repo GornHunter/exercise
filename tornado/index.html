@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <style>
+        #page-wrap {
+            width: 800px;
+            margin: 50px auto 50px auto;
+        }
+
+        #meaning {
+            margin-top: 20px;
+        }
+
+        #q {
+            width: 200px;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="page-wrap">
+    <form action="/word" method="get">
+        <input type="text" name="k" id="q">
+        <input type="submit" value="translate">
+    </form>
+
+    <div id="meaning">
+        {% if meaning %}
+        {{meaning}}
+        {% end %}
+    </div>
+</div>
+</body>
+</html>
