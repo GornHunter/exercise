@@ -38,7 +38,9 @@ def get_and_extract_links(url):
                 href = href.strip()
             if href:
                 # print(href, urljoin(url, href))
+                print(href,'@@@@@@@@@@@@@@@@@@@@@@')
                 u = urljoin(url, href)
+                print(u,'[[[[[[[[[[[[[[[[[[[[[[[')
                 if "#" in u:
                     u = u[:u.index("#")]
                 urls.append(u)
