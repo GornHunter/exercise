@@ -5,6 +5,7 @@ from os import path
 from bs4 import BeautifulSoup
 
 SAVE_DIR = '/home/nancy/Downloads/www.ldoceonline.com/dictionary'
+SAVE_DICT = '/home/nancy/Downloads/worddictionary'
 
 data = {'word': 'filename',
         'type': 'noun',
@@ -17,11 +18,17 @@ data = {'word': 'filename',
 
 
 def every_sense_example(one):
-    every_meaning = one.find('ftdef').get_text()
+    try:
+        every_meaning = one.find('ftdef').get_text()
+    except Exception as e:
+        every_meaning = None
+        print one
+
     examples = []
     for e in one.find_all('div', {'class': 'EXAMPLE'}):
         example = e.get_text()
-        examples.append(e)
+        # print example
+        examples.append(example)
     return {'meaning': every_meaning, 'examples': examples}
 
 
@@ -51,7 +58,7 @@ def retrieve_content(soup):
 
 def main():
     dictionary = {}
-    for f in glob.glob(SAVE_DIR + '/*')[:10]:
+    for f in glob.glob(SAVE_DIR + '/*')[:100]:
         if path.isdir(f):
             continue
             # print open(f, 'r')
@@ -61,7 +68,7 @@ def main():
         word = retrieve_content(soup)
         dictionary[filename] = word
     print dictionary
-
+    open(SAVE_DICT, 'w').write(str(dictionary))
 
 if __name__ == '__main__':
     main()
