@@ -10,4 +10,8 @@ class MainPage(webapp2.RequestHandler):
 
 app=webapp2.WSGIApplication([('/',MainPage)],debug=True)
 
-wsgi.WSGIServer(("",8080), app, spawn=None).serve_forever()
+
+print __name__, '===================='
+
+if __name__ == "__main__":
+    wsgi.WSGIServer(("",8080), app, spawn=None).serve_forever()

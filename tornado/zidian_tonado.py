@@ -6,6 +6,9 @@ import tornado.web
 import tornado.ioloop
 import MySQLdb
 
+
+print __name__, '=-======================'
+
 # w = {'spice': 'n.香料，调味品；香气，香味；趣味，情趣；少许', 'posh': 'adj.精美的；豪华的；漂亮的；时髦的', 'cocktail': 'n.鸡尾酒；餐前开胃菜；混合物'}
 default = {'title': 'My title', 'meaning': 'No exit'}
 

@@ -1,7 +1,7 @@
 __author__ = 'nancy'
 m=''
 
-months = ['Janurary',
+months = ['January',
           'February',
           'March',
           'April',
