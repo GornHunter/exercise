@@ -32,10 +32,70 @@ def query():
         link = Link(*link_tuple)
         # return results
         # print link.vote
-    c=db.execute("select * from links where id=2")
-    link=Link(*c.fetchone())
+    c = db.execute("select * from links where id=2")
+    link = Link(*c.fetchone())
     return link.vote
 
+
+def query_1():
+    c = db.execute("select * from links where submitter_id=74383 and vote>1000")
+    link = Link(*c.fetchone())
+    return link.id
+
+
+def query_orderby():
+    results = []
+    c = db.execute("select * from links where submitter_id=73849 order by submitted_time")
+    for link_tuple in c:
+        link = Link(*link_tuple)
+        results.append(link.id)
+    return results
+
+
+def query_order_another():
+    c = db.execute("select id from links where submitter_id=73849 order by submitted_time asc")
+    results = [t[0] for t in c]
+    return results
+
+
+def link_by_id(link_id):
+    for l in links:
+        if l.id == link_id:
+            return l
+
+
+def build_link_index():
+    index = {}
+    for l in links:
+        index[l.id] = l
+    return index
+
+
+link_index = build_link_index()
+
+
+def link_id(link_id):
+    return link_index[link_id]
+
+
+def add_new_link(l):
+    links.append(l)
+    link_index[l.id] = l
+
+
+l = Link(50, 1, 1, 1, 'title', 'url')
+add_new_link(l)
+print links[-1]
+print link_id(50)
+
+print link_id(3), '*******'
+
+print build_link_index()
+print link_by_id(5)
+
+print query_1(), '------'
+print query_orderby()
+print query_order_another(), '2222'
 
 query()
 
