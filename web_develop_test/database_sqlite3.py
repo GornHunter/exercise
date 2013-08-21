@@ -14,7 +14,8 @@ links = [Link(0, 12345, 1524525, 3252, "ujjiarojiojojpw", "jipqitjuiiooit"),
          Link(5, 73849, 4264833, 323256, "uhiapur9ipuqrui", "ji8a9ur8q9tyu7u"),
          Link(6, 22222, 34555, 4532, "uhiapur9ipuqrui", "ji8a9ur8q9tyu7u")]
 
-db = sqlite3.connect(':memory:')
+# db = sqlite3.connect(':memory:')
+db = sqlite3.connect('/tmp/example.db')
 db.execute('create table links (id integer,submitter_id integer,submitted_time integer,'
            'vote integer,title text,url text)')
 for l in links:
@@ -100,3 +101,52 @@ print query_order_another(), '2222'
 query()
 
 print query()
+
+
+class HashTable(object):
+    def __init__(self):
+        self.array = [None] * 10
+        self.hash_func = id
+
+    def get(self, key):
+        idx = self.hash_func(key) % len(self.array)
+        while 1:
+            item = self.array[idx % len(self.array)]
+            if item:
+                i_key, i_value = item
+                if i_key == key:
+                    return i_value
+                else:
+                    idx += 1
+            else:
+                return None
+
+
+    def set(self, key, value):
+        idx = self.hash_func(key) % len(self.array)
+        while 1:
+            if self.array[idx] is None:
+                self.array[idx] = (key, value)
+                return
+            else:
+                old_key, old_value = self.array[idx]
+                if old_key == key:
+                    self.array[idx] = (key, value)
+                    return
+                # TODO resize hash table, reinsert all the exist key & value, then reinsert key&value
+                idx = (idx + 1) % len(self.array)
+
+
+def test_hash_table():
+    ht = HashTable()
+    ht.set("100", 1)
+
+    ht.set("100", 2)
+
+    ht.set("120", 3)
+
+    print ht.get("111")
+    print ht.get("100")
+
+
+print test_hash_table()
