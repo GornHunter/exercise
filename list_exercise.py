@@ -48,7 +48,7 @@ __author__ = 'Nancy'
 # print(stack)
 
 # ************************************************************************
-# from _collections import deque
+# from collections import deque
 # d=deque('ghi')
 # for elem in d:
 #     print(elem.upper())
@@ -76,7 +76,7 @@ __author__ = 'Nancy'
 # print(r)
 
 # **********************************************************
-# from _collections import deque
+# from collections import deque
 # queue = deque(['E','J','M'])
 # queue.append('T')
 # queue.append('G')
