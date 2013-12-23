@@ -1,7 +1,8 @@
 __author__ = 'nancy'
 
 import hmac
-
+import tornado.ioloop
+import tornado.web
 
 SECRET = 'imsosecret'
 
@@ -9,7 +10,7 @@ SECRET = 'imsosecret'
 import hashlib
 
 import os
-import webapp2
+# import webapp2
 import jinja2
 from gevent import wsgi
 
@@ -42,21 +43,22 @@ def check_secure_val(h):
 # print check_secure_val(t)
 
 
-class Handler(webapp2.RequestHandler):
-    def write(self, *a, **kw):
-        self.response.out.write(*a, **kw)
+# class Handler(webapp2.RequestHandler):
+#     def write(self, *a, **kw):
+#         self.response.out.write(*a, **kw)
+#
+#     def render_str(self, template, **params):
+#         t = jinja2_env.get_template(template)
+#         return t.render(params)
+#
+#     def render(self, template, **kw):
+#         self.write(self.render_str(template, **kw))
 
-    def render_str(self, template, **params):
-        t = jinja2_env.get_template(template)
-        return t.render(params)
 
-    def render(self, template, **kw):
-        self.write(self.render_str(template, **kw))
-
-
-class MainPage(Handler):
+class MainPage(tornado.web.RequestHandler):
     def get(self):
         # self.write('test')
+        self.add_header()
         self.response.headers['Content-Type'] = 'text/plain'
         visits = 0
         visit_cookie_str = self.request.cookies.get('visits')
@@ -68,15 +70,15 @@ class MainPage(Handler):
 
         new_cookie_val = make_secure_val(str(visits))
 
-        self.response.headers.add_header('Set-Cookie', 'visits=%s' % new_cookie_val)
+        self.add_header()('Set-Cookie', 'visits=%s' % new_cookie_val)
 
         if visits > 1000:
-            self.write('you are the best ever!')
+            self.add_header().out.write('you are the best ever!')
         else:
-            self.write("You've been here %s times!" % visits)
+            self.add_header().out.write("You've been here %s times!" % visits)
 
 
-app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
+app = tornado.web.Application([('/', MainPage)], debug=True)
 
 if __name__ == "__main__":
     wsgi.WSGIServer(("", 9000), app, spawn=None).serve_forever()
