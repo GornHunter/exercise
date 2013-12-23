@@ -21,10 +21,10 @@ SAVE_DIR = '/tmp/crawler'
 def save_content(html, url):
     p = urlparse(url).path
     if not p:
-        p += '/index.html'
+        p += '/slide_test_04_formal.html'
     if p[-1:] == '/':
         # print(p)
-        p += 'index.html'
+        p += 'slide_test_04_formal.html'
         # print(p)
     save_path = path.join(SAVE_DIR, p[1:])
     dirs = path.dirname(save_path)

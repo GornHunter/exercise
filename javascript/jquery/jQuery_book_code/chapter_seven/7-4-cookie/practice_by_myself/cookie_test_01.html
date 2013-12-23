@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+</head>
+<body>
+user:<input type="text" name="username" id="username"><br>
+<input type="checkbox" id="check">Remember the username
+<script src="jquery-1.10.2.js"></script>
+<script src="jquery.cookie.js"></script>
+<script>
+    $(function () {
+        var COOKIENAME = 'username'
+        if ($.cookie(COOKIENAME)) {
+            $('#username').val($.cookie(COOKIENAME))
+        }
+
+        $('#check').click(function () {
+            if ('#check:checked') {
+                $.cookie(COOKIENAME, $('#username').val(), { expires: 7, path: '/' })
+            } else {
+                $.cookie(COOKIENAME, null, {path: '/'})
+            }
+        })
+    })
+</script>
+</body>
+</html>

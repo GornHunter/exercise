@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        var parent = {
+            key1: '12121',
+            sdfsdf: 1
+        };
+
+        parent.prototype = {
+
+        }
+
+        //        parent.f(10, 10);
+
+
+        var o = Object.create(parent)
+
+        Object.create2 = function (o) {
+            var F = function () {
+            }
+            F.prototype = o;
+            return new F();
+        }
+
+        function f(i, j) {
+            console.log(this);
+            return i + j;
+        }
+
+        console.log(f(1, 10));
+
+        function F(name, age) {
+            console.log(this);
+            this.name = name;
+            this.age = age;
+            console.log(this);
+        }
+
+        function createF(name, age) {
+            return {
+                name: name,
+                age: age
+            };
+        }
+
+        var o1 = createF('1', 1);
+        var o2 = createF('1', 1);
+
+
+        var obj = {
+            name: 'abc',
+            age: 100
+        }
+
+        console.log(new F(), '==================');
+
+        function f() {
+
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

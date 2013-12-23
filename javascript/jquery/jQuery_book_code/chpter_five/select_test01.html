@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <style type="text/css">
+
+    </style>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#add").click(function(){
+                $("#select1 option:selected").appendTo('#select2');
+            });
+            $("#subtract").click(function(){
+                $("#select2 option:selected").appendTo('#select1');
+            });
+            $("#addall").click(function(){
+                $("#select1 option").appendTo('#select2');
+            });
+            $("#subtractall").click(function(){
+                $("#select2 option").appendTo('#select1');
+            })
+            $("#select1").dblclick(function(){
+                $("option:selected",this).appendTo('#select2');
+            });
+            $("#select2").dblclick(function(){
+                $("option:selected",this).appendTo('#select1');
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="#select">
+    account:<input type="text" name="username"><br>
+    password:<input type="password" name="passwd">* more than 6 letters<br>
+    name:<input type="text" name="zhuchi"><br>
+    task:<select multiple="multiple" style="height:160px;width: 100px" id="select1">
+    <option>选项1</option>
+    <option>选项2</option>
+    <option>选项3</option>
+    <option>选项4</option>
+    <option>选项5</option>
+    <option>选项6</option>
+    <option>选项7</option>
+    <option>选项8</option>
+    <option>选项9</option>
+    <option>选项10</option>
+    <option>选项11</option>
+    <option>选项12</option>
+    <option>选项13</option>
+    <option>选项14</option>
+    <option>选项15</option>
+    <option>选项16</option>
+    <option>选项17</option>
+    <option>选项18</option>
+    <option>选项19</option>
+</select>
+    <input type="button" value="&gt; |" id="add">
+    <input type="button" value="&gt;&gt;" id="addall">
+    <input type="button" value="&lt;&lt;" id="subtractall">
+    <input type="button" value="| &lt;" id="subtract">
+    <select multiple="multiple" style="height:160px;width: 100px" id="select2">
+    </select>
+</div>
+</body>
+</html>

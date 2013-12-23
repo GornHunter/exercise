@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<response>
+    <status>1</status>
+    <time>1170323512</time>
+    <message>
+        <author>zhang san</author>
+        <text>sha fa!</text>
+    </message>
+    <message>
+        <author>lisi</author>
+        <text>bandeng!</text>
+    </message>
+</response>

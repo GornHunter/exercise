@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <title>导航栏</title>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.level_1 a').click(function () {
+                $(this).addClass('current')
+                        .next().slideToggle()
+                        .parent().siblings().children('a').removeClass('current')
+                        .next().hide();
+                return false; //note this code!!!!!!!!!! because this code,the a(衬衫) does not open the baidu page.
+            })
+        })
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-size: 12px;
+            font-family: "\5b8b\4f53", "Arial Narrow";
+            line-height: 22px;
+        }
+
+        .box {
+            width: 120px;
+            margin: 0 auto;
+        }
+
+        .menu {
+            border: 1px solid #C4D5DF;
+            border-bottom: 0;
+            padding: 0;
+            text-indent: 14px;
+        }
+
+        .menu .level_1 {
+            list-style: none;
+            line-height: 28px;
+            font-weight: 700;
+            border-bottom: 1px solid #C4D5DF;
+            background: #EBF3F8;
+        }
+
+        .menu .level_1 a {
+            color: #5893B7;
+            display: block;
+        }
+
+        .menu .level_1 a.current {
+            background: #B1D7EF;
+        }
+
+        .menu .level_2 {
+            list-style: none;
+            /*list-style-type:square;*/
+            padding: 0;
+            text-indent: 18px;
+            background: #ffffff;
+            display: none;
+        }
+
+        .menu ul.level_2 a {
+            color: #42556B;
+            font-weight: 400;
+            display: block;
+        }
+
+        .menu ul.level_2 a:hover {
+            color: #f60;
+        }
+
+        .menu a {
+            text-decoration: none;
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="menu">
+        <li class="level_1">
+            <a href="http://www.baidu.com">衬衫</a>
+            <ul class="level_2">
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">短袖衬衫</a></li>
+            </ul>
+        </li>
+        <li class="level_1">
+            <a href="#none">卫衣</a>
+            <ul class="level_2">
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">短袖衬衫</a></li>
+            </ul>
+        </li>
+        <li class="level_1">
+            <a href="#none">裤子</a>
+            <ul class="level_2">
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">短袖衬衫</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

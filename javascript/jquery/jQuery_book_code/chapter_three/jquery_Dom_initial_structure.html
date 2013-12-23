@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<p title="what's your favorite fruit?">what's your favorite fruit?</p>
+
+<ul>
+    <li title="orange">orange</li>
+    <li title="apple">apple</li>
+    <li title="banana">banana</li>
+</ul>
+<input type="button" value="select" id="element">get element value<br>
+<input type="button" value="select" id="attribute">get attribute value
+<script src="jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $('#element').click(function () {
+            var $li = $('ul li:eq(1)');
+            var li_text = $li.text();
+            alert(li_text);
+        });
+
+        $('#attribute').click(function () {
+            var $para = $('p');
+            var p_text = $para.attr('title');
+            alert(p_text);
+        });
+
+        var $li_1 = $('<li title="pear">pear</li>');
+        var $li_2 = $('<li title="mango">mango</li>');
+        $('ul').append($li_1).append($li_2);
+
+        var $li_3 = $('ul li:eq(1)');
+        var $li_4 = $('ul li:eq(2)');
+        $li_4.insertBefore($li_3);
+
+        $('ul li:eq(1)').appendTo('ul');
+        $('ul li[title=banana]').remove()
+
+        $('ul li').click(function(){
+//            alert($(this).html())
+//            $(this).clone().appendTo('ul')
+            $(this).clone(true).appendTo('ul')
+        })
+
+        var $li_5 = $('ul li:eq(2)').detach();
+        $li_5.appendTo('ul');
+
+//        $('ul li:eq(1)').empty();
+
+//        $('<strong title="what is fruit you hated?">what is fruit you hated?</strong>').replaceAll('p')
+        $('p').replaceWith('<strong title="what is fruit you hated?">what is fruit you hated?</strong>')
+        $('li').wrapInner('<b></b>')
+//        $('li').wrap('<b></b>')
+//        $('li').wrapAll('<em></em>')
+
+        $('strong').click(function(){
+            var txt=$('strong').attr('title');
+            alert('title:'+txt);
+            $('strong').attr('title','your title')
+        })
+
+        function f_test() {
+            var i = 100;
+            function inner() {
+                i += 1;
+                return i;
+            }
+            return inner;
+        }
+
+        var a = f_test();
+        a()
+        a()
+    })
+</script>
+</body>
+</html>

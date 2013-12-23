@@ -27,7 +27,7 @@ a._i = 3
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        t = loader.load("index.html")
+        t = loader.load("slide_test_04_formal.html")
         html = t.generate(title="this is title", p="this is p")
         print(html)
         self.write(html)

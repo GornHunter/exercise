@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+</head>
+<body>
+<p>This is a test</p>
+
+<p>This is a test</p>
+<table id="tab">
+    <tbody>
+    <tr>
+        <td>the first row</td>
+        <td>the first row</td>
+    </tr>
+    <tr>
+        <td>the second row</td>
+        <td>the second row</td>
+    </tr>
+    <tr>
+        <td>the third row</td>
+        <td>the third row</td>
+    </tr>
+    <tr>
+        <td>the fourth row</td>
+        <td>the fourth row</td>
+    </tr>
+    <tr>
+        <td>the fifth row</td>
+        <td>the fifth row</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+
+<form method="post" action="#">
+    <input type="checkbox" value="1" name="check" checked="checked">
+    <input type="checkbox" value="2" name="check">
+    <input type="checkbox" value="1" name="check" checked="checked">
+    <input type="button" value="the number of your selected" id="btn">
+</form>
+<script type="text/javascript">
+//    window.onload = function () {
+//        var items = document.getElementsByTagName('p');
+////        console.log(items)
+//        for (var i = 0; i < items.length; i++) {
+//            items[i].onclick = function () {
+//                alert('suc')
+//            }
+//        }
+//    };
+
+    $(document).ready(function(){
+        $("p").click(function(){
+            alert("suc");
+        });
+
+        $("#tab tr:even").css("background","red");
+
+        $("input[type=button]").click(function(){
+            var $n=$("input[name=check]:checked").length;
+            alert($n)
+        })
+    });
+
+//    window.onload = function () {
+//        var item = document.getElementById("tab");
+////        console.log(item);
+//        var tabody = item.getElementsByTagName("tbody");
+//        var tbelement = item.getElementsByTagName("tbody")[0];
+////        console.log(tabody);
+////        console.log(tbelement);
+//        var trs = tbelement.getElementsByTagName("tr");
+////        console.log(trs);
+//        for (var i = 0; i < trs.length; i++) {
+//            if (i % 2 == 0) {
+//                trs[i].style.backgroundColor = "#888";
+//            }
+//        }
+//    };
+
+//    window.onload = function () {
+//        var btn = document.getElementById("btn");
+//        btn.onclick = function () {
+//            var arrays = new Array();
+//            var item = document.getElementsByName("check");
+//            console.log(item);
+//            for (i = 0; i < item.length; i++) {
+//                if (item[i].checked) {
+//                    arrays.push(item[i].value)
+//                }
+//            }
+//            alert("the number is: "+arrays.length)
+//        }
+//    }
+</script>
+</body>
+</html>

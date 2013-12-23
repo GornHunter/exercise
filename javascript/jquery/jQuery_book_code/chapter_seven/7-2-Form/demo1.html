@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>demo1.html</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="lib/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="lib/jquery.form.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            function myAjaxForm(callback) {
+                var $this = $(this);
+                $this.submit(function (e) {
+                    var params = {};
+                    $(':input', $this).each(function () {
+                        var $input = $(this);
+                        var name = $input.attr('name');
+                        var val = $input.val();
+                        if (name) {
+                            params[name] = val
+                        }
+                    });
+
+                    var action = $this.attr('action') || location.pathname;
+                    var method = $this.attr('method') || "get";
+
+                    if (method == 'post') {
+                        $.post(action, params, callback)
+                    } else if (method == 'get') {
+                        $.get(action, params, callback);
+                    } else {
+                        console.log('not implemented')
+                    }
+                    e.preventDefault();
+                })
+            };
+
+            $.myAjaxForm = myAjaxForm
+            $.fn.myAjaxForm = myAjaxForm
+
+            $.fn.extend({
+                'abc': function () {
+                },
+                'kk': function () {
+                },
+                'myAjaxForm': myAjaxForm
+            })
+
+//            $('#slides').slides();
+
+
+            $('#myForm').myAjaxForm(function () {
+
+                $('#output1').html("提交成功！欢迎下次再来！").show();
+
+            });
+
+//            $('#myForm').submit(function () {
+//                console.log('------------------')
+//                return false;
+//            });
+        });
+    </script>
+</head>
+
+<body>
+<h3> Demo 1 : form插件的使用--ajaxForm(). </h3>
+
+<form id="myForm" action="/api/" method="post">
+    名称： <input type="text" name="name"/> <br/>
+    地址： <input type="text" name="address"/><br/>
+    自我介绍： <textarea name="comment"></textarea> <br/>
+    <input type="submit" id="test" value="提交"/> <br/>
+
+    <div id="output1" style="display:none;"></div>
+</form>
+
+<div id="model-window">
+    <div id="overlay"></div>
+    <div id="window">
+        <button>Close</button>
+    </div>
+</div>
+<style>
+    #model-window {
+        display: none;
+    }
+
+    #window {
+        position: absolute;
+        top: 30%;
+        left: 45%;
+        min-width: 300px;
+        min-height: 100px;
+    }
+
+    #overlay {
+        top: 0;
+        left: 0;
+        position: absolute;
+        opacity: 0.46;
+        width: 100%;
+        height: 100%;
+        background: #000;
+    }
+</style>
+<script type="text/javascript">
+    $(document).keydown(function (e) {
+        if (e.which === 191 && e.shiftKey) {
+            $('#model-window').fadeIn();
+        } else if (e.which === 27) {
+            $('#model-window').fadeOut();
+        }
+    })
+
+</script>
+</body>
+</html>
+
+

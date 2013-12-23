@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<p>Given that y=5,calculate x=y+2,and display the result</p>
+<button type="button" onclick="calculate()">Try it</button>
+<p id="demo"></p>
+
+<script>
+    var x=5;
+    var y=9;
+    var z=x+y;
+document.write(x+"<br>");
+    document.write(y+"<br>");
+    document.write(z+"<br>");
+function calculate(){
+    y=5;
+    x=y+2;
+    document.getElementById('demo').innerHTML='x='+x;
+}
+    var cars=['volvo',"saab","BMW"];
+    for(i=0;i<cars.length;i++){
+        document.write(cars[i]+'<br>');
+    }
+
+    var person={firstname:'John',lastname:'Doe',id:5566};
+    document.write(person.lastname+'<br>')
+    document.write(person['lastname'])
+
+    var person=new Object()
+    person.lastname='Dov';
+    person.firstname='John';
+    person.eye='blue';
+    person.age=50;
+
+    document.write('<br>'+person.firstname + " is " + person.age + " years old.")
+
+    function wizard(name,job){
+        alert("welcome "+name+" job is "+job+" ,the wizard");
+    }
+
+</script>
+<button type="button" onclick="wizard('bob','manager')">click for bob</button>
+<button type="button" onclick="wizard('harry potter','man')">click for harry potter</button>
+<script>
+    function check(){
+        var age,sel
+        age=document.getElementById('age').value;
+        sel=(age<18)?"young":"old enough";
+        document.getElementById('check_age').innerHTML=sel;
+    }
+
+</script>
+<div>
+    <p>click the button to check the age</p>
+    Age:<input type="text" id="age">
+    <p>Old enough to vote?</p>
+    <button onclick="check()">Try it</button>
+    <p id="check_age"></p>
+</div>
+<script>
+    function check_day(){
+        var x;
+        var d=new Date().getDay();
+        switch (d){
+            case 0:x="Today is Sunday";
+                break;
+//            case 1:x="Today is Monday";
+                break;
+            case 2:x="Today is Tuesday";
+                break;
+            case 3:x="Today is Wednesday";
+                break;
+            case 4:x="Today is Thursday";
+                break;
+            case 5:x="Today is Friday";
+                break;
+            case 6:x="Today is Saturday";
+                break;
+            default :x="look forward to the weekend";
+        }
+        document.getElementById('date').innerHTML=x;
+    }
+</script>
+<div>
+    <p>click the button to display what day it is today?</p>
+    <button type="button" onclick="check_day()">click me</button>
+    <p id="date"></p>
+</div>
+</body>
+</html>

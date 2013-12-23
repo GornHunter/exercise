@@ -9,8 +9,8 @@ from bs4 import BeautifulSoup
 def save_content(html, url):
     p = urlparse(url).path
     if p[-1:] == "/":
-        # "http://google.com/" => "http://google.com/index.html"
-        p += "index.html"
+        # "http://google.com/" => "http://google.com/slide_test_04_formal.html"
+        p += "slide_test_04_formal.html"
 
     save_path = path.join("/tmp/shenfeng_www", p[1:])
     dirs = path.dirname(save_path)

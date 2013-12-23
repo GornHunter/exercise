@@ -10,6 +10,7 @@ from tornado.options import define, options
 
 define("port", default=8000, help="run on the given port", type=int)
 
+
 class BookHandler(tornado.web.RequestHandler):
     def get(self):
         self.render(
@@ -27,6 +28,9 @@ if __name__ == '__main__':
         handlers=[(r'/', BookHandler)],
         template_path=os.path.join(os.path.dirname(__file__), "templates")
     )
-    http_server = tornado.httpserver.HTTPServer(app)
-    http_server.listen(options.port)
+    # http_server = tornado.httpserver.HTTPServer(app)
+    # http_server.listen(options.port)
+    app.listen(8080)
     tornado.ioloop.IOLoop.instance().start()
+
+

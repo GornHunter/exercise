@@ -10,7 +10,7 @@ start_idx = 1
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render("static/index.html")
+        self.render("static/slide_test_04_formal.html")
 
     def post(self):
         self.set_header("Content-Type", "text/plain;charset=utf8")

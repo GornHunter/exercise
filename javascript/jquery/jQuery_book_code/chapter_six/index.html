@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This is a test</title>
+    <style>
+        #q {
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>This is a test</h1>
+
+<input id="q">
+
+<ul id="suggestions">
+
+</ul>
+
+<span id="place-holder"></span>
+
+
+
+<script src="jquery-1.10.2.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $('#q').keyup(function() {
+           var q = $(this).val();
+            $.get('/api/?query=' + q, function (data) {
+
+                console.log(data.suggestions)
+
+                $('#suggestions').empty();
+
+                for(var i = 0; i < data.suggestions.length; i++) {
+                    $('#suggestions').append('<li>' + data.suggestions[i] + '</li>')
+                }
+
+                $('#place-holder').text(data.path).css({
+                    color: 'red',
+                    fontSize: '18px'
+                });
+            });
+        });
+
+        $.get('/api/?query=test', function (data) {
+            console.log(data);
+
+            $('#place-holder').text(data.key).css({
+                color: 'red',
+                fontSize: '18px'
+            });
+        })
+    });
+</script>
+</body>
+</html>

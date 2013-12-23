@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+
+    <style type="text/css">
+        #form1 {
+            font: normal 12px/17px Arial;
+        }
+
+        div {
+            padding: 2px;
+        }
+
+        input, textarea {
+            border: 1px solid #000;
+            width: 12em;
+        }
+
+        fieldset {
+            border: 1px solid #000;
+        }
+
+            input:focus, textarea:focus {
+            border: 1px solid #f00;
+            background: #fcc;
+            }
+
+        .focus {
+            border: 1px solid #f00;
+            background: #fcc;
+        }
+    </style>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(":input").focus(function () {
+                $(this).addClass("focus");
+            }).blur(function () {
+                        $(this).removeClass("focus");
+                    });
+        });
+    </script>
+</head>
+<body>
+<form id="form1" action="#" method="post">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label form="username">名称:</label>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <label form="password">密码:</label>
+            <input type="password" id="password">
+        </div>
+        <div>
+            <label for="msg">详细信息: </label>
+            <textarea id="msg"></textarea>
+        </div>
+    </fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <style type="text/css">
+body{
+    font: normal 12px/17px Arial;
+}
+        span {
+            display: inline-block;
+            padding: 6px 10px;
+            background: #aaa;
+            color: #fff;
+        }
+        span:hover{
+            cursor: pointer;
+        }
+        textarea{
+            margin: 0;
+            font: normal 12px/17px Arial;
+            text-align: left;
+        }
+    </style>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var $h=$("#comment");
+            $("#larger").click(function(){
+                if($h.height()<500){
+                    $h.height($h.height()+50)
+                }
+            });
+            $("#smaller").click(function(){
+                if($h.height()>50){
+                    $h.height($h.height()-50)
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<form>
+    <div id="msg_cap">
+        <span id="larger">放大</span>
+        <span id="smaller">缩小</span>
+    </div>
+    <div id="msg">
+        <textarea id="comment" rows="8" cols="50">
+            多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        </textarea>
+    </div>
+</form>
+</body>
+</html>

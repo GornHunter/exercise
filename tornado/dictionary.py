@@ -20,7 +20,7 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         v = default_values.copy()
         v['meaning'] = 'Please search'
-        self.render('index.html', **v)
+        self.render('slide_test_04_formal.html', **v)
 
 
 class DictLookupHandler(tornado.web.RequestHandler):
@@ -29,9 +29,9 @@ class DictLookupHandler(tornado.web.RequestHandler):
         v = default_values.copy()
         if word in h:
             v['meaning'] = h[word]
-            self.render('index.html', **v)
+            self.render('slide_test_04_formal.html', **v)
         else:
-            self.render('index.html', **v)
+            self.render('slide_test_04_formal.html', **v)
 
 
 application = tornado.web.Application([

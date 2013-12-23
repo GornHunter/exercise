@@ -1,4 +1,9 @@
 /*work hard*/
+
+h1{
+    text-align: center;
+}
+
 #page-wrap {
     width: 900px;
     margin: 0 auto;
@@ -6,7 +11,8 @@
 
 #profile {
     float: right;
-    width: 180px;
+    width: 130px;
+    height:160px;
 }
 
 #self-info td:first-child {

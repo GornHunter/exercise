@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(":reset").click(function(){
+            setTimeout(function(){
+                countcheck();
+                ("select").change();
+            },0);
+        });
+        $("#btn2").click(function(){
+            $("#form1 input:enabled").val("这里变化了！")
+        });
+        $("#btn3").click(function(){
+            $("#form1 input:disabled").val("这里变化了！")
+        });
+
+        $(":checkbox").click(countcheck);
+        function countcheck(){
+            var n=$("input:checked").length;
+            $("div").eq(0).html("<strong>"+n +" have been selected</strong>")
+        }
+        countcheck();
+////        $("select :option").click(countselect);
+//        function countselect(){
+//            var num=$("option:selected").length;
+//            $("div").eq(1).html("<strong>"+num+" have been selected</strong>")
+//        }
+//        countselect();
+
+        $("select").change(function(){
+            var str="";
+            $("select :selected").each(function(){
+                str+=$(this).text()+",";
+            });
+            $("div").eq(1).html("<strong>you select "+str+"</strong>")
+        }).trigger('change');
+    })
+</script>
+</head>
+<body>
+<h3>表单对象属性过滤选择器.</h3>
+<form id="form1" action="#">
+    <button id="btn1" type="reset">重置所有表单元素</button>
+    <br><br>
+    <button id="btn2">对表单内 可用input 赋值操作.</button>
+    <button id="btn3">对表单内 不可用input 赋值操作.</button>
+<br><br>
+    可用元素：<input name="add" value="可用文本框">
+    <br>
+    不可用元素：<input name="email" value="不可用文本框" disabled="disabled">
+    <br>
+    可用元素：<input name="add" value="可用文本框">
+    <br>
+    不可用元素：<input name="email" value="不可用文本框" disabled="disabled">
+    <br>
+    <br>
+    多选框：
+    <br>
+    <input name="newsletter" type="checkbox" checked="checked" value="test1">test1
+    <input name="newsletter" type="checkbox" value="test2">test2
+    <input name="newsletter" type="checkbox" value="test3">test3
+    <input name="newsletter" type="checkbox" checked="checked" value="test4">test4
+    <input name="newsletter" type="checkbox" value="test5">test5
+<div>
+
+</div>
+    <br>
+    <br>
+    下拉列表1：
+    <br>
+    <select name="chose1" multiple="multiple" style="height: 150px">
+        <option>浙江</option>
+        <option selected="selected">beijing</option>
+        <option>tianjin</option>
+        <option>hubei</option>
+        <option selected="selected">shanghai</option>
+        <option>jiangsu</option>
+        <option>heilongjiang</option>
+        <option selected="selected">xinjing</option>
+        <option>xizang</option>
+        <option>xichuan</option>
+    </select>
+    <br>
+    <br>
+    下拉列表2：
+    <br>
+    <select name="chose2">
+        <option>浙江</option>
+        <option selected="selected">beijing</option>
+        <option>tianjin</option>
+        <option>hubei</option>
+        <!--<option selected="selected">shanghai</option>-->
+        <option>jiangsu</option>
+        <option>heilongjiang</option>
+        <!--<option selected="selected">xinjing</option>-->
+        <option>xizang</option>
+        <option>xichuan</option>
+    </select>
+    <div>
+
+    </div>
+</form>
+
+</body>
+</html>

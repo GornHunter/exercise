@@ -14,7 +14,7 @@ define("port", default=9000, help="run on the given port", type=int)
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('index.html')
+        self.render('slide_test_04_formal.html')
 
 
 class PoemPageHandler(tornado.web.RequestHandler):

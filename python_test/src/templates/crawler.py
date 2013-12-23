@@ -10,7 +10,7 @@ def save_content(html, url):
     p = urlparse(url).path
     print "++++++++++++++++++++++", p
     if p[-1:] == "/":
-        p += "index.html"
+        p += "slide_test_04_formal.html"
 
     save_path = path.join("/tmp/test", p[1:])
     dirs = path.dirname(save_path)

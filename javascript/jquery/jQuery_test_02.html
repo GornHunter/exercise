@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="/javascript/js/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#slide').click(function () {
+                $('#up-down').css('color', 'red')
+                        .slideUp(2000).slideDown(2000);
+            });
+        });
+    </script>
+    <style>
+        #ancestors *
+        {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #e3edc2;
+            list-style: none;
+            display: block;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('span').parentsUntil('div').css({'color':'red',"border":"2px solid red"});
+        });
+    </script>
+</head>
+<body>
+<div>
+    <p id="up-down">jQuery is fun!!</p>
+    <button id="slide" type="button">Click me</button>
+</div>
+<div id="ancestors">
+    <div>div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (direct parent)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+    <div>div (grandparent)
+        <p>p (direct parent)
+            <!--<span>span</span>-->
+        </p>
+    </div>
+</div>
+</body>
+</html>

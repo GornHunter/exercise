@@ -21,7 +21,7 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         v = default.copy()
         v['meaning'] = "Please Search"
-        self.render("index.html", **v)
+        self.render("slide_test_04_formal.html", **v)
 
 
 class MeanHandler(tornado.web.RequestHandler):
@@ -37,11 +37,11 @@ class MeanHandler(tornado.web.RequestHandler):
         else:
             v['meaning']='No Exit'
 
-        self.render("index.html", **v)
+        self.render("slide_test_04_formal.html", **v)
 
         # else:
         # # v['meaning'] = "No Exit"
-        # self.render("index.html", **v)
+        # self.render("slide_test_04_formal.html", **v)
 
 
 application = tornado.web.Application([

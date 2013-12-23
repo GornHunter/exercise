@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>chat</title>
+    <style type="text/css">
+        body{
+            font: normal 12px/17px arial;
+        }
+        #wrapper{
+            width: 40em;
+            margin: 2px auto;
+        }
+        #message_window{
+            padding: 4px;
+            width: 40em;
+            height: 30em;
+            border: 1px solid #222;
+        }
+
+        #chat_form input{
+            border: 1px solid #222;
+            /*margin-left: 6px;*/
+            /*padding-left: 5px;*/
+        }
+    </style>
+    <script src="jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        timestamp=0
+        updateMsg()
+        $(function(){
+            $('#cht_form').submit(function(){
+                $.post('/api/',{
+                    message:$('#msg').val(),
+                    name:$('author').val(),
+                    action:'postmsg',
+                    time:timestamp
+                },function(xml){
+                    $('#msg').val('')
+                    addMessages(xml)
+                });
+                return false;
+            })
+            function updateMsg(){
+                $.post('/api/',
+                        {time:timestamp},function(xml){
+                            $('#loading').remove();
+                            addMessages(xml);
+                        })
+                setTimeout('updateMsg()',4000)
+            }
+            function addMessages(xml){
+                if($('status').text()=='2') return;
+                timestamp=$('time',xml).text();
+                $('message',xml).each(function(){
+                    var author=$('author',this).text();
+                    var content=$('text',this).text();
+                    var htmlcode='<strong>'+author+'</strong>:'+content+'<br>';
+                    $('#message_window').prepend(htmlcode)
+                })
+            }
+
+        })
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <p id="message_window"><span id="loading">loading...</span> </p>
+    <form id="chat_form">
+        <label for="author">name:</label><input type="text" id="author" size="60"><br>
+        <label for="msg">message:</label> <input type="text" id="msg" size="60"><br>
+        <input type="submit" value="send">
+    </form>
+</div>
+</body>
+</html>

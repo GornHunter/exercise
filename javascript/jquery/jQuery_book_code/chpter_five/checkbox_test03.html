@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <style type="text/css">
+
+    </style>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#checkAllOrNot").click(function () {
+//                console.log(this);
+//                console.log($(this));
+//                if (this.checked) {
+//                    $("[name=items]:checkbox").prop("checked", true);
+//                }
+//                else {
+//                    $("[name=items]:checkbox").prop('checked', false);
+//                }
+                $("[name=items]:checkbox").prop("checked", this.checked);
+            });
+//the first method
+//            $("[name=items]:checkbox").click(function () {
+//                var flag = true;
+//                $('[name=items]:checkbox').each(function () {
+//                    if (!this.checked) {
+//                        flag = false
+//                    }
+//                });
+//                $("#checkAllOrNot").prop('checked', flag);
+//            });
+//   the second method
+            $("[name=items]:checkbox").click(function () {
+                var $tmp = $("[name=items]:checkbox");
+                $("#checkAllOrNot").prop('checked', $tmp.length == $tmp.filter(':checked').length);
+            });
+            $("#send").click(function () {
+                var $str = "the sports I like are:\r\n";
+                $("[name=items]:checkbox:checked").each(function () {
+                    $str += $(this).val() + "\r\n";
+                });
+                alert($str)
+            })
+        })
+    </script>
+</head>
+<body>
+<form id="form1" method="post" action="#">
+    你爱好的运动是？
+    <input type="checkbox" id="checkAllOrNot" value="全　选">全选/全不选
+    <br>
+    <input type="checkbox" name="items" value="足球">足球
+    <input type="checkbox" name="items" value="篮球">篮球
+    <input type="checkbox" name="items" value="羽毛球">羽毛球
+    <input type="checkbox" name="items" value="乒乓球">乒乓球<br>
+    <input type="button" id="send" value="提　交">
+</form>
+</body>
+</html>

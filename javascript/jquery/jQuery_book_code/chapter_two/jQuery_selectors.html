@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <script src="assist.js"></script>
+    <style type="text/css">
+        div, span, p {
+            width: 140px;
+            height: 140px;
+            float: left;
+            background: #aaa;
+            border: 1px solid #000;
+            margin: 5px;
+            font-size: 17px;
+            font-family: verdana;
+        }
+
+        div.mini {
+            width: 55px;
+            height: 55px;
+            font-size: 12px;
+        }
+
+        div.hide {
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+<h3>基本选择器.</h3>
+<button id="reset">手动重置页面元素</button>
+<input id="isreset" type="checkbox" checked="checked">
+<label for="isreset">点击下列按钮时先自动重置页面</label>
+<br>
+<br>
+<input type="button" id="btn1" value="选择 id为 one 的元素.">
+<input type="button" id="btn2" value="选择 class 为 mini 的所有元素.">
+<input type="button" id="btn3" value="选择 元素名是 div 的所有元素.">
+<input type="button" id="btn4" value="选择 所有的元素.">
+<input type="button" id="btn5" value="选择 所有的span元素和id为two的元素.">
+<input type="button" id="btn6" value="选择 animated元素.">
+<input type="button" id="btn7" value="选择 focus 元素.">
+<br>
+<br>
+
+<div id="one" class="one">
+    id为one,class为one的div
+    <div class="mini">class为mini</div>
+</div>
+<div id="two" class="one" title="test">
+    id为two,class为one,title为test的div.
+    <div class="mini" title="other">class为mini,title为other</div>
+    <div class="mini" title="test">class为mini,title为test</div>
+</div>
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"></div>
+</div>
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini" title="test">class为mini,title为tesst</div>
+</div>
+<div style="display: none" class="none">
+    style的display为"none"的div
+</div>
+<div class="hide">class为"hide"的div</div>
+<div>包含input的type为"hidden"的div<input type="hidden" size="8"></div>
+<div title="en">title为en的div元素</div>
+<div title="en-UK">title为en-UK的div元素</div>
+<div title="english">title为english的div元素</div>
+<div title="en uk">title为en uk的div元素</div>
+<div title="uken">title为uken的div元素</div>
+<span id="mover">正在执行动画的span元素.</span>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $("#one").css("background", "#bbffaa");
+        });
+        $("#btn2").click(function () {
+            $(".mini").css("background", "#bbffaa");
+        });
+        $("#btn3").click(function () {
+            $("div").css("background", "#bbffaa");
+        });
+        $("#btn4").click(function () {
+            $("*").css("background", "#bbffaa");
+        });
+        $("#btn5").click(function () {
+            $("span,#two").css("background", "#bbffaa");
+        });
+        $("#btn6").click(function () {
+            $(":animated").css("background", "#bbffaa");
+        });
+        $("#btn7").click(function () {
+            $(":focus").css("background", "red");
+        });
+//        $("div:contains('di')").css("background", "#bbffaa");
+//        $("div:empty").css("background", "#bbffaa");
+//        $("div:has('.mini')").css("background", "#bbffaa");
+//        $("div:parent").css("background", "#bbffaa");
+//        $("div:visible").css("background","#bbffaa");
+//        $("div:hidden").show(1000);
+//        $("div[title]").css("background","#bbffaa");
+//        $("div[title=test]").css("background","#bbffaa");
+//        $("div[title!=test]").css("background","#bbffaa");
+//        $("div[title^=te]").css("background","#bbffaa");
+//        $("div[title*=es]").css("background","#bbffaa");
+//        $("div[id][title*=es]").css("background","#bbffaa");
+//        $("div[title^='en']").css("background","#bbffaa");
+//        $("div[title*='en']").css("background","#bbffaa");
+//        $("div[title~='uk']").css("background","#bbffaa");
+//        $("div.one :nth-child(2)").css("background","#bbffaa");
+//        $("div.one :first-child").css("background","#bbffaa");
+//        $("div.one :last-child").css("background","#bbffaa");
+        $("div.one :only-child").css("background","#bbffaa");
+    })
+</script>
+<!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+
+
+<!--//    $("body div").css("background","#bbffaa");-->
+<!--//    $("body>div").css("background","#bbffaa");-->
+<!--//    $("#one+div").css("background","#bbffaa");-->
+<!--//    $(".one+div").css("background", "#bbffaa");-->
+<!--//    $("#two~div").css("background","#bbffaa");-->
+<!--//    $("div:first").css("background","#bbffaa");-->
+<!--//    $("div:last").css("background","#bbffaa");-->
+<!--//    $("div:not(.one)").css("background","#bbffaa");-->
+<!--//    $("div:even").css("background","#bbffaa");-->
+<!--//    $("div:odd").css("background","#bbffaa");-->
+<!--//    $("div:eq(3)").css("background","#bbffaa");-->
+<!--//    $("div:gt(3)").css("background","#bbffaa");-->
+<!--//    $("div:lt(3)").css("background","#bbffaa");-->
+
+<!--&lt;!&ndash;//</script>&ndash;&gt;-->
+</body>
+</html>

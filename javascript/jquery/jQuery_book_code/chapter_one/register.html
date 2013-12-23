@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <title>Register</title>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {        // wait for all DOM are loaded
+            var $dom = $('#dom');                //this is jQuery object
+            console.log($dom[0]);
+            console.log($dom);
+            var dom = $dom[0];                   //this is dom object
+            $dom.click(function () {
+                if (dom.checked) {             //DOM panduan fangshi
+                    alert('thank your support,you can continue work')
+                }
+            })
+
+        });
+
+        $(document).ready(function () {
+            var $jq = $("#jq");
+            $jq.click(function () {
+                if ($jq.is(":checked")) {
+                    alert('thank your support,you can continue work');
+                }
+            })
+        });
+
+        $(document).ready(function () {
+            $('p').click(function (e) {
+                // alert($(this).text());
+                console.log("on p ------")
+
+                e.stopPropagation();
+            })
+
+            $(document).delegate('a', 'click', function (e) {
+                console.log('----- from a-----', e.target)
+                e.preventDefault();
+            });
+
+
+
+//            $(document).click(function(e) {
+//                console.log("on parent (document) clicked", e.target)
+//
+//            });
+        });
+
+        $(document).ready(function () {
+            $('table tbody tr:has(td:has(:checkbox:enabled))').css('background', 'red');
+        })
+
+        $(document).ready(function () {
+            $('a').click(function (e) {
+                console.log('a clicked')
+                $('<p><a href="/sdfsdfds">sfsdfsdf</a></p>').appendTo('body').click(function() {
+                    console.log('inserted clicked');
+                })
+                // e.stopPropagation();
+                e.preventDefault();
+                // return false;
+            });
+        });
+    </script>
+
+</head>
+<body>
+<input type="checkbox" id="dom"><label for="dom">I already have read the policy.</label><br>
+<input type="checkbox" id="jq"><label for="jq">I already have read the policy.</label>
+
+<p>Test-jQuery</p>
+
+<table>
+    <tbody>
+    <tr>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行<input type="checkbox" disabled="disabled"></td>
+    </tr>
+    <tr>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行<input type="checkbox"></td>
+    </tr>
+    <tr>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行<input type="checkbox" disabled="disabled"></td>
+    </tr>
+    <tr>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行<input type="checkbox"></td>
+    </tr>
+
+    <div id="parent-div">
+
+        <table>
+            <tr>
+                <td>
+                    <p>this is a test</p>
+                    <a href="/">this is a link</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>this is a test</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>this is a test</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>this is a test</p>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    </tbody>
+</table>
+</body>
+</html>

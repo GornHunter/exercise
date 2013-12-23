@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            var $slides = $('#slide li');
+            var is_on_hover = false;
+
+            $('#slide').hover(function () {
+                console.log("------------------- onhover")
+                is_on_hover = true;
+            }, function () {
+                console.log('-------------- out')
+                is_on_hover = false;
+            });
+
+            var $controls = $('.slide-control span');
+
+            $controls.hover(function () {
+                var text = $(this).text();
+                // var id = +text;
+                var index = parseInt(text) - 1;
+
+                $slides.hide()
+                $($slides[index]).show()
+//                $slides.removeClass("show").addClass('hide');
+//                $($slides[index]).removeClass('hide').addClass('show');
+
+
+                $controls.removeClass('active');
+                $(this).addClass('active')
+            });
+
+            var slides_count = $slides.length;
+            var show_index = 0;
+
+            setInterval(function () {
+                if (!is_on_hover) {
+                    $slides.removeClass("show").addClass('hide');
+                    var index = show_index % slides_count;
+                    $($slides[index]).removeClass('hide').addClass('show');
+
+                    show_index += 1;
+
+                    $controls.removeClass('active');
+                    $($controls[index]).addClass('active')
+                }
+            }, 2500);
+
+        });
+
+
+    </script>
+    <style>
+
+        #slide {
+            /*position: relative;*/
+        }
+
+        li {
+            /*position: absolute;*/
+            top: 10px;
+            left: 10px;
+            list-style: none;
+        }
+
+        .slide-control {
+            /*position: absolute;*/
+            top: 420px;
+            left: 300px;
+
+        }
+
+        .slide-control span {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            line-height: 22px;
+            display: inline-block;
+            background: #999;
+            margin: 0 1px;
+            text-align: center;
+            border-radius: 12px;
+            color: #EEE;
+            font-size: small;
+            font-weight: bold;
+        }
+
+        li.show {
+            display: block;
+
+        }
+
+        li.hide {
+            display: none;
+        }
+
+        .slide-control span.active {
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="slide">
+    <ul>
+        <li class="show">
+            <img src="images/1.jpg" height="400" width="670">
+        </li>
+        <li class="hide">
+            <img src="images/2.jpg" height="400" width="670">
+        </li>
+        <li class="hide">
+            <img src="images/3.jpg" height="400" width="670">
+        </li>
+        <li class="hide">
+            <img src="images/4.jpg" height="400" width="670">
+        </li>
+        <li class="hide">
+            <img src="images/5.jpg" height="400" width="670">
+        </li>
+        <li class="hide">
+            <img src="images/6.jpg" height="400" width="670">
+        </li>
+    </ul>
+    <div class="slide-control">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</div>
+
+<script>
+
+    console.log($('.slide-control span'), '-------------------')
+</script>
+</body>
+</html>

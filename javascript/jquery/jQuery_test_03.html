@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="/javascript/js/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#1').click(function(){
+                $('#test1').load("ajax_test_01.txt #p1");
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="test1"><h4>Let jQuery AJAX Change This Test.</h4></div>
+<button id="1">Get External Content</button>
+</body>
+</html>

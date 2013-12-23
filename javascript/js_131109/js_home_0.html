@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+
+        function changeImage(){
+            element=document.getElementById('myimage')
+            if (element.src.match("bulbon")){
+                element.src="images/pic_bulboff.gif"
+                           }
+            else{
+                element.src="images/pic_bulbon.gif"
+            }
+        }
+
+        function changeStyle(){
+            x=document.getElementById('demo');
+            x.style.color="#ff0000";
+        }
+
+        function NoNumber(){
+            x=document.getElementById('number').value;
+            if(x==""||isNaN(x)){
+                alert("Not Number")
+            }
+        }
+        function overwritten(){
+            document.write("Oop! the document disappeared!");
+        }
+    </script>
+    <script>
+        alert("My First JavaScript");
+    </script>
+</head>
+<body>
+<h4>My First JavaScript</h4>
+
+<p id="demo">This is a paragraph</p>
+<button type="button" onclick="displayDate()">Display Date</button>
+<button type="button" onclick="alert('welcome')">Click Me</button>
+<button type="button" onclick="changeStyle()">Change Style</button>
+<div>
+<img id="myimage" onclick="changeImage()" src="images/pic_bulboff.gif">
+</div>
+<div>
+    <input type="text" id="number">
+    <input type="submit" onclick="NoNumber()" value="Click Me!">
+</div>
+<div>
+    <button type="button" onclick="overwritten()">OverWritten</button>
+</div>
+</body>
+</html>

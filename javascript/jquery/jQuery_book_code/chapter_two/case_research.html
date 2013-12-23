@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title></title>
+    <script src="../../../js/jquery-1.10.2.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        #allbrand {
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        #allbrand ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        #allbrand li {
+            list-style: none;
+            display: block;
+            width: 200px;
+            float: left;
+            line-height: 20px;
+        }
+
+        #allbrand a {
+            text-decoration: none;
+            color: #04D
+        }
+
+        #allbrand a:hover {
+            color: #F50;
+            text-decoration: underline;
+        }
+
+        div.all {
+            margin-top: 20px;
+        }
+
+        a.a {
+            border: 1px solid #AAA;
+            padding: 4px 8px;
+        }
+
+        span.more {
+            background: url("images/down.gif") no-repeat;
+            padding-left: 15px;
+        }
+
+       #allbrand ul a.promote{
+            color:#F50;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $category = $("ul li:gt(5):not(:last)");
+//            console.log($category);
+            $category.hide();
+            var $togglebtn = $("div.all a");
+            $togglebtn.click(function () {
+                if ($category.is(":visible")) {
+                    $category.hide();
+                    console.log("$(this)")
+                    $(this).find("span")
+                            .css("background", "url('images/down.gif') no-repeat")
+                            .text("显示全部品牌");
+                }
+                else {
+                    $category.show();
+                    $(this).find("span")
+                            .css("background", "url('images/up.gif') no-repeat")
+                            .text("精简显示品牌");
+                    $("#allbrand ul a").filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')")
+                            .addClass("promote");
+                }
+                return false;
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+<div id="allbrand">
+    <ul>
+        <li><a href="#">佳能</a><i>(30440)</i></li>
+        <li><a href="#">索尼</a><i>(30440)</i></li>
+        <li><a href="#">三星</a><i>(30440)</i></li>
+        <li><a href="#">尼康</a><i>(30440)</i></li>
+        <li><a href="#">松下</a><i>(30440)</i></li>
+        <li><a href="#">卡西欧</a><i>(30440)</i></li>
+        <li><a href="#">富士</a><i>(30440)</i></li>
+        <li><a href="#">柯达</a><i>(30440)</i></li>
+        <li><a href="#">宾得</a><i>(30440)</i></li>
+        <li><a href="#">理光</a><i>(30440)</i></li>
+        <li><a href="#">奥林巴斯</a><i>(30440)</i></li>
+        <li><a href="#">明基</a><i>(30440)</i></li>
+        <li><a href="#">爱国者</a><i>(30440)</i></li>
+        <li><a href="#">其它品牌相机</a></li>
+    </ul>
+    <div style="clear: both"></div>
+    <div class="all"><a class="a" href="more.html"><span class="more">显示全部品牌</span></a></div>
+    <!--<div class="part"><a class="p" href="simple.html"><span class="simple">精简显示品牌</span></a></div>-->
+</div>
+
+</body>
+</html>
