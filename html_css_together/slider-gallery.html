@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" charset="utf-8">
+    <title>Slider Gallery</title>
+    <style type="text/css">
+        body {
+            /*background-color: #212121;*/
+            font-size: 1em;
+            font-family: "Trebuchet MS", verdana, arial, sans-serif;
+        }
+
+        #slider-gallery {
+            width: 1030px;
+            height: 170px;
+            border: 1px solid #666;
+            padding: 10px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        #slider-gallery ul {
+            padding: 0;
+            white-space: nowrap;
+            left: 10px;
+            position: absolute;
+        }
+
+        #slider-gallery ul li {
+            display: inline-block;
+
+        }
+
+        #slider-gallery ul li img{
+            cursor: pointer;
+        }
+
+
+        .slider-control2 {
+            height: 30px;
+            top: 140px;
+        }
+
+        .slider-control {
+            background: url("images/jd-slider-gallery/productbrowser_scrollbar_20131203_2.png") no-repeat center;
+            background-size: 1030px 20px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .slider-control span {
+            position: absolute;
+            top: 8px;
+            z-index: 200;
+            cursor: pointer;
+            color: #bbb;
+        }
+
+        .slider-control span.slider-btn1 {
+            left: 70px;
+        }
+
+        .slider-control span.slider-btn2 {
+            left: 500px;
+        }
+
+        .slider-control span.slider-btn3 {
+            right: 70px;
+        }
+
+        .handler {
+            width: 160px;
+            height: 25px;
+            cursor: move;
+            background: url("images/jd-slider-gallery/productbrowser_scroller_20131203.png") no-repeat;
+            background-size: 150px 18px;
+            position: absolute;
+            top: 6px;
+            left: 20px;
+        }
+    </style>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui-full-1.5.2.min.js"></script>
+    <!--<script src="js/jquery.dimensions.js"></script>-->
+    <!--<script src="js/ui.mouse.js"></script>-->
+    <!--<script src="js/ui.slider.js"></script>-->
+    <script type="text/javascript">
+        //        $(window).ready(function () {
+        //            $('#slider-gallery').each(function () {
+        window.onload = function () {
+            var container = $('#slider-gallery');
+            var ul = $('ul', container);
+
+            var itemsWidth = ul.innerWidth() - container.outerWidth();
+
+            $('.slider-control', container).slider({
+                min: 0,
+                max: itemsWidth,
+                handle: '.handler',
+                stop: function (event, ui) {
+//                    console.log(ui.value)
+                    ul.animate({'left': ui.value * -1}, 500);
+                },
+                slide: function (event, ui) {
+                    console.log(ui.value);
+                    ul.css('left', ui.value * -1);
+                }
+            });
+        };
+
+        //            });
+        //        });
+
+    </script>
+</head>
+<body>
+<div id="slider-gallery">
+    <ul class="items">
+        <li><img src="images/jd-slider-gallery/1.jpg"></li>
+        <li><img src="images/jd-slider-gallery/2.jpg"></li>
+        <li><img src="images/jd-slider-gallery/3.jpg"></li>
+        <li><img src="images/jd-slider-gallery/4.jpg"></li>
+        <li><img src="images/jd-slider-gallery/5.jpg"></li>
+        <li><img src="images/jd-slider-gallery/6.jpg"></li>
+        <li><img src="images/jd-slider-gallery/7.jpg"></li>
+        <li><img src="images/jd-slider-gallery/8.jpg"></li>
+        <li><img src="images/jd-slider-gallery/9.jpg"></li>
+        <li><img src="images/jd-slider-gallery/10.jpg"></li>
+        <li><img src="images/jd-slider-gallery/11.jpg"></li>
+        <li><img src="images/jd-slider-gallery/12.jpg"></li>
+        <li><img src="images/jd-slider-gallery/13.jpg"></li>
+        <li><img src="images/jd-slider-gallery/14.jpg"></li>
+        <li><img src="images/jd-slider-gallery/15.jpg"></li>
+        <li><img src="images/jd-slider-gallery/16.jpg"></li>
+        <li><img src="images/jd-slider-gallery/17.jpg"></li>
+        <li><img src="images/jd-slider-gallery/18.jpg"></li>
+        <li><img src="images/jd-slider-gallery/19.jpg"></li>
+        <li><img src="images/jd-slider-gallery/20.jpg"></li>
+        <li><img src="images/jd-slider-gallery/21.jpg"></li>
+        <li><img src="images/jd-slider-gallery/22.jpg"></li>
+        <li><img src="images/jd-slider-gallery/23.jpg"></li>
+        <li><img src="images/jd-slider-gallery/24.jpg"></li>
+        <li><img src="images/jd-slider-gallery/25.jpg"></li>
+        <li><img src="images/jd-slider-gallery/26.jpg"></li>
+        <li><img src="images/jd-slider-gallery/27.jpg"></li>
+        <li><img src="images/jd-slider-gallery/28.jpg"></li>
+        <li><img src="images/jd-slider-gallery/29.jpg"></li>
+        <li><img src="images/jd-slider-gallery/30.jpg"></li>
+    </ul>
+    <div class="slider-control slider-control2">
+        <a href="javascript:void(0)" style="outline:none;border:none;">
+            <div class="handler"></div>
+        </a>
+        <span class="slider-btn1">大家电</span>
+        <span class="slider-btn2">小家电</span>
+        <span class="slider-btn3">汽车五金</span>
+    </div>
+</div>
+
+
+</body>
+</html>

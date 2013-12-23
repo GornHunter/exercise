@@ -2,8 +2,58 @@
 <html>
 <head>
     <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        div {
+            width: 1200px;
+            height: 219px;
+            overflow: hidden;
+            background: yellow;
+        }
+
+        div ul{
+            margin: 0;
+            padding: 0;
+        }
+        div li  {
+            float: left;
+            transition: width 2s ease-in-out;
+
+            width: 200px;
+            display: inline-block;
+            /*width: 500px;*/
+
+        }
+        div img{
+            width: 500px;
+            /*border-radius: 10px;*/
+            box-shadow: -1px 1px 1px #F3E2E2
+
+        }
+        div:hover li{
+            width: 140px;
+        }
+
+        div li:hover{
+            width: 500px;
+        }
+
+    </style>
 </head>
 <body>
-
+<div>
+    <ul>
+        <li><img src="images/css_transition/cellphone.jpg"></li>
+        <li><img src="images/css_transition/clothes.jpg"></li>
+        <li><img src="images/css_transition/computer.jpg"></li>
+        <li><img src="images/css_transition/electronic.jpg"></li>
+        <li><img src="images/css_transition/facetool.jpg"></li>
+        <li><img src="images/css_transition/furniture.jpg"></li>
+    </ul>
+</div>
 </body>
 </html>

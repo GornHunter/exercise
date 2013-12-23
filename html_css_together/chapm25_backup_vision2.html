@@ -7,7 +7,7 @@
 
 @media (max-width: 1000px) {
     .pull-right {
-        display: none;
+        overflow: hidden;
     }
 
     body {
@@ -15,9 +15,8 @@
     }
 }
 
-
 body {
-   min-width: 1000px;
+    min-width: 1000px;
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
@@ -36,13 +35,14 @@ body {
 
 .navbar-inner {
     background: #034482;
-    min-height:30px;
+    min-height: 30px;
     padding: 0 15px;
 }
 
-.logo_button{
-   float: left;
-    /*min-heiht 5px;*/
+.logo_button {
+    float: left;
+    min-height: 30px
+
 }
 
 .logo_button .brand {
@@ -52,7 +52,9 @@ body {
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
     padding: 0 20px 0 0;
     text-decoration: none;
-    min-heigtop: 12px;
+    min-height: 30px;
+    position: relative;
+    top: 12px;
 }
 
 .nav-right {
@@ -69,8 +71,7 @@ body {
 
 .nav a {
     position: relative;
-    /*5e;*/
-   top: 16px;
+    top: 16px;
 }
 
 .nav li:hover {
@@ -84,14 +85,19 @@ body {
 .nav a {
     text-decoration: none;
     color: #ffffff;
-    fnt-siz: 14px;
-    text-shadow: 1px px 0rgba(0, , 0, 0.2);
+    font-size: 14px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2)
 }
+
     /*------------------ -content------------------------*/
 
 #contain-fluid {
     /*position: relative;*/
     padding: 70px 20px 0 20px;
+}
+
+.nav-list{
+    padding: 0 15px;
 }
 
 .nav-list li {
@@ -115,7 +121,7 @@ body {
     background: #f5f5f5;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba0, 0, 0, 0.05);
+    /*box-shadow: inset 0 1px 1px rgba0, 0, 0, 0.05);*/
 
 }
 
@@ -133,7 +139,9 @@ body {
 
 .content {
     float: right;
- min-width: 1000px;
+    width: 92.5%;
+
+    /*min-width: 1000px;*/
 }
 
 .span-top {
@@ -145,11 +153,11 @@ body {
 #contain-fluid .pre-intro {
     float: left;
     width: 65%;
-    padding-right: %;
-    lie-height: 40px;
+    padding-right: 2%;
+    line-height: 40px;
 }
 
-#containfluid .face {
+#contain-fluid .face {
     float: left;
     width: 31%;
     margin-left: 2%;
@@ -249,7 +257,7 @@ body {
     border-top: 1px solid #ddd
 }
 
-.table .ppright {
+.table .ppleft{
     font-size: 14px;
 }
 
@@ -264,11 +272,16 @@ body {
     border-bottom: 1px solid #fff;
 }
 
-.all-proince a {
+.all-province a {
     text-decoration: none;
-    color: #2fa47;
-    line-height: 20
-pt-decoration underline
+    color: #2fa4e7;
+    line-height: 20px;
+
+}
+
+.all-province a:hover {
+    text-decoration: underline;
+    color: #0000ff;
 }
 
 </style>
@@ -342,6 +355,7 @@ pt-decoration underline
         <li class="nav-header"><a class="province" href="http://www.chapm25.com/province/68.html">云南</a></li>
         <li class="nav-header"><a class="province" href="http://www.chapm25.com/province/35.html">浙江</a></li>
     </ul>
+</div>
 <div class="content">
 <div>
 <div class="span-top">
@@ -1059,221 +1073,358 @@ pt-decoration underline
 </thead>
 <tbody>
 <tr>
-    <td><div class="allstaname" title="大兴"><a class="popoverchart ppleft" href="javascript:;" staid="9018" data-original-title="" title="">大兴</a></div></td>
+    <td>
+        <div class="allstaname" title="大兴"><a class="popoverchart ppleft" href="javascript:;" staid="9018"
+                                              data-original-title="" title="">大兴</a></div>
+    </td>
     <td>143 ug/m<sup>3</sup></td>
     <td>201 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">196</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">196</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="永乐店"><a class="popoverchart ppleft" href="javascript:;" staid="9003" data-original-title="" title="">永乐店</a></div></td>
+    <td>
+        <div class="allstaname" title="永乐店"><a class="popoverchart ppleft" href="javascript:;" staid="9003"
+                                               data-original-title="" title="">永乐店</a></div>
+    </td>
     <td>134 ug/m<sup>3</sup></td>
     <td>175 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">192</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">192</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="亦庄"><a class="popoverchart ppleft" href="javascript:;" staid="9005" data-original-title="" title="">亦庄</a></div></td>
+    <td>
+        <div class="allstaname" title="亦庄"><a class="popoverchart ppleft" href="javascript:;" staid="9005"
+                                              data-original-title="" title="">亦庄</a></div>
+    </td>
     <td>132 ug/m<sup>3</sup></td>
     <td>200 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">190</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">190</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="通州"><a class="popoverchart ppleft" href="javascript:;" staid="201" data-original-title="" title="">通州</a></div></td>
+    <td>
+        <div class="allstaname" title="通州"><a class="popoverchart ppleft" href="javascript:;" staid="201"
+                                              data-original-title="" title="">通州</a></div>
+    </td>
     <td>109 ug/m<sup>3</sup></td>
     <td>164 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">179</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">179</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="南三环"><a class="popoverchart ppleft" href="javascript:;" staid="9010" data-original-title="" title="">南三环</a></div></td>
+    <td>
+        <div class="allstaname" title="南三环"><a class="popoverchart ppleft" href="javascript:;" staid="9010"
+                                               data-original-title="" title="">南三环</a></div>
+    </td>
     <td>107 ug/m<sup>3</sup></td>
     <td>155 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">178</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">178</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="琉璃河"><a class="popoverchart ppleft" href="javascript:;" staid="9014" data-original-title="" title="">琉璃河</a></div></td>
+    <td>
+        <div class="allstaname" title="琉璃河"><a class="popoverchart ppleft" href="javascript:;" staid="9014"
+                                               data-original-title="" title="">琉璃河</a></div>
+    </td>
     <td>104 ug/m<sup>3</sup></td>
     <td>118 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">176</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">176</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="平谷"><a class="popoverchart ppleft" href="javascript:;" staid="9009" data-original-title="" title="">平谷</a></div></td>
+    <td>
+        <div class="allstaname" title="平谷"><a class="popoverchart ppleft" href="javascript:;" staid="9009"
+                                              data-original-title="" title="">平谷</a></div>
+    </td>
     <td>102 ug/m<sup>3</sup></td>
     <td>152 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">175</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">175</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="丰台花园"><a class="popoverchart ppleft" href="javascript:;" staid="202" data-original-title="" title="">丰台花园</a></div></td>
+    <td>
+        <div class="allstaname" title="丰台花园"><a class="popoverchart ppleft" href="javascript:;" staid="202"
+                                                data-original-title="" title="">丰台花园</a></div>
+    </td>
     <td>89 ug/m<sup>3</sup></td>
     <td>184 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">168</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">168</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="榆垡"><a class="popoverchart ppleft" href="javascript:;" staid="9002" data-original-title="" title="">榆垡</a></div></td>
+    <td>
+        <div class="allstaname" title="榆垡"><a class="popoverchart ppleft" href="javascript:;" staid="9002"
+                                              data-original-title="" title="">榆垡</a></div>
+    </td>
     <td>86 ug/m<sup>3</sup></td>
     <td>118 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">167</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">167</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="东高村"><a class="popoverchart ppleft" href="javascript:;" staid="9017" data-original-title="" title="">东高村</a></div></td>
+    <td>
+        <div class="allstaname" title="东高村"><a class="popoverchart ppleft" href="javascript:;" staid="9017"
+                                               data-original-title="" title="">东高村</a></div>
+    </td>
     <td>86 ug/m<sup>3</sup></td>
     <td>152 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">167</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">167</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="万寿西宫"><a class="popoverchart ppleft" href="javascript:;" staid="1001" data-original-title="" title="">万寿西宫</a></div></td>
+    <td>
+        <div class="allstaname" title="万寿西宫"><a class="popoverchart ppleft" href="javascript:;" staid="1001"
+                                                data-original-title="" title="">万寿西宫</a></div>
+    </td>
     <td>80 ug/m<sup>3</sup></td>
     <td>150 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">164</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">164</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="永定门内"><a class="popoverchart ppleft" href="javascript:;" staid="9004" data-original-title="" title="">永定门内</a></div></td>
+    <td>
+        <div class="allstaname" title="永定门内"><a class="popoverchart ppleft" href="javascript:;" staid="9004"
+                                                data-original-title="" title="">永定门内</a></div>
+    </td>
     <td>80 ug/m<sup>3</sup></td>
     <td>87 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">164</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">164</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="奥体中心"><a class="popoverchart ppleft" href="javascript:;" staid="1011" data-original-title="" title="">奥体中心</a></div></td>
+    <td>
+        <div class="allstaname" title="奥体中心"><a class="popoverchart ppleft" href="javascript:;" staid="1011"
+                                                data-original-title="" title="">奥体中心</a></div>
+    </td>
     <td>76 ug/m<sup>3</sup></td>
     <td>154 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">162</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">162</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="北部新区"><a class="popoverchart ppleft" href="javascript:;" staid="9019" data-original-title="" title="">北部新区</a></div></td>
+    <td>
+        <div class="allstaname" title="北部新区"><a class="popoverchart ppleft" href="javascript:;" staid="9019"
+                                                data-original-title="" title="">北部新区</a></div>
+    </td>
     <td>75 ug/m<sup>3</sup></td>
     <td>160 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">161</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">161</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="海淀区万柳"><a class="popoverchart ppleft" href="javascript:;" staid="1007" data-original-title="" title="">海淀区万柳</a></div></td>
+    <td>
+        <div class="allstaname" title="海淀区万柳"><a class="popoverchart ppleft" href="javascript:;" staid="1007"
+                                                 data-original-title="" title="">海淀区万柳</a></div>
+    </td>
     <td>74 ug/m<sup>3</sup></td>
     <td>106 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">161</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">161</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="延庆"><a class="popoverchart ppleft" href="javascript:;" staid="9006" data-original-title="" title="">延庆</a></div></td>
+    <td>
+        <div class="allstaname" title="延庆"><a class="popoverchart ppleft" href="javascript:;" staid="9006"
+                                              data-original-title="" title="">延庆</a></div>
+    </td>
     <td>72 ug/m<sup>3</sup></td>
     <td>148 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">160</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">160</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="东四"><a class="popoverchart ppleft" href="javascript:;" staid="1003" data-original-title="" title="">东四</a></div></td>
+    <td>
+        <div class="allstaname" title="东四"><a class="popoverchart ppleft" href="javascript:;" staid="1003"
+                                              data-original-title="" title="">东四</a></div>
+    </td>
     <td>70 ug/m<sup>3</sup></td>
     <td>151 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">158</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">158</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="美国大使馆"><a class="popoverchart ppleft" href="javascript:;" staid="101" data-original-title="" title="">美国大使馆</a></div></td>
+    <td>
+        <div class="allstaname" title="美国大使馆"><a class="popoverchart ppleft" href="javascript:;" staid="101"
+                                                 data-original-title="" title="">美国大使馆</a></div>
+    </td>
     <td>67 ug/m<sup>3</sup></td>
     <td>-</td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">157</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">157</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="八达岭"><a class="popoverchart ppleft" href="javascript:;" staid="9020" data-original-title="" title="">八达岭</a></div></td>
+    <td>
+        <div class="allstaname" title="八达岭"><a class="popoverchart ppleft" href="javascript:;" staid="9020"
+                                               data-original-title="" title="">八达岭</a></div>
+    </td>
     <td>65 ug/m<sup>3</sup></td>
     <td>176 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">156</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">156</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="门头沟"><a class="popoverchart ppleft" href="javascript:;" staid="9013" data-original-title="" title="">门头沟</a></div></td>
+    <td>
+        <div class="allstaname" title="门头沟"><a class="popoverchart ppleft" href="javascript:;" staid="9013"
+                                               data-original-title="" title="">门头沟</a></div>
+    </td>
     <td>64 ug/m<sup>3</sup></td>
     <td>148 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="东四环"><a class="popoverchart ppleft" href="javascript:;" staid="9016" data-original-title="" title="">东四环</a></div></td>
+    <td>
+        <div class="allstaname" title="东四环"><a class="popoverchart ppleft" href="javascript:;" staid="9016"
+                                               data-original-title="" title="">东四环</a></div>
+    </td>
     <td>64 ug/m<sup>3</sup></td>
     <td>113 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="顺义新城"><a class="popoverchart ppleft" href="javascript:;" staid="1008" data-original-title="" title="">顺义新城</a></div></td>
+    <td>
+        <div class="allstaname" title="顺义新城"><a class="popoverchart ppleft" href="javascript:;" staid="1008"
+                                                data-original-title="" title="">顺义新城</a></div>
+    </td>
     <td>63 ug/m<sup>3</sup></td>
     <td>156 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="植物园"><a class="popoverchart ppleft" href="javascript:;" staid="9001" data-original-title="" title="">植物园</a></div></td>
+    <td>
+        <div class="allstaname" title="植物园"><a class="popoverchart ppleft" href="javascript:;" staid="9001"
+                                               data-original-title="" title="">植物园</a></div>
+    </td>
     <td>63 ug/m<sup>3</sup></td>
     <td>132 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="古城"><a class="popoverchart ppleft" href="javascript:;" staid="1012" data-original-title="" title="">古城</a></div></td>
+    <td>
+        <div class="allstaname" title="古城"><a class="popoverchart ppleft" href="javascript:;" staid="1012"
+                                              data-original-title="" title="">古城</a></div>
+    </td>
     <td>64 ug/m<sup>3</sup></td>
     <td>109 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">155</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="官园"><a class="popoverchart ppleft" href="javascript:;" staid="1006" data-original-title="" title="">官园</a></div></td>
+    <td>
+        <div class="allstaname" title="官园"><a class="popoverchart ppleft" href="javascript:;" staid="1006"
+                                              data-original-title="" title="">官园</a></div>
+    </td>
     <td>60 ug/m<sup>3</sup></td>
     <td>130 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">153</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">153</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="西直门北"><a class="popoverchart ppleft" href="javascript:;" staid="9007" data-original-title="" title="">西直门北</a></div></td>
+    <td>
+        <div class="allstaname" title="西直门北"><a class="popoverchart ppleft" href="javascript:;" staid="9007"
+                                                data-original-title="" title="">西直门北</a></div>
+    </td>
     <td>59 ug/m<sup>3</sup></td>
     <td>131 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">153</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">153</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="怀柔镇"><a class="popoverchart ppleft" href="javascript:;" staid="1009" data-original-title="" title="">怀柔镇</a></div></td>
+    <td>
+        <div class="allstaname" title="怀柔镇"><a class="popoverchart ppleft" href="javascript:;" staid="1009"
+                                               data-original-title="" title="">怀柔镇</a></div>
+    </td>
     <td>57 ug/m<sup>3</sup></td>
     <td>172 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">152</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">152</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="密云"><a class="popoverchart ppleft" href="javascript:;" staid="9012" data-original-title="" title="">密云</a></div></td>
+    <td>
+        <div class="allstaname" title="密云"><a class="popoverchart ppleft" href="javascript:;" staid="9012"
+                                              data-original-title="" title="">密云</a></div>
+    </td>
     <td>58 ug/m<sup>3</sup></td>
     <td>133 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">152</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">152</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="昌平镇"><a class="popoverchart ppleft" href="javascript:;" staid="1010" data-original-title="" title="">昌平镇</a></div></td>
+    <td>
+        <div class="allstaname" title="昌平镇"><a class="popoverchart ppleft" href="javascript:;" staid="1010"
+                                               data-original-title="" title="">昌平镇</a></div>
+    </td>
     <td>58 ug/m<sup>3</sup></td>
     <td>162 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">152</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">152</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="农展馆"><a class="popoverchart ppleft" href="javascript:;" staid="1005" data-original-title="" title="">农展馆</a></div></td>
+    <td>
+        <div class="allstaname" title="农展馆"><a class="popoverchart ppleft" href="javascript:;" staid="1005"
+                                               data-original-title="" title="">农展馆</a></div>
+    </td>
     <td>56 ug/m<sup>3</sup></td>
     <td>148 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FF4A4A;" title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">151</span></td>
+    <td><span class="label pmdata" style="background-color: #FF4A4A;"
+              title="不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群减少户外运动 - 首要污染物 PM2.5">151</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="定陵"><a class="popoverchart ppleft" href="javascript:;" staid="1002" data-original-title="" title="">定陵</a></div></td>
+    <td>
+        <div class="allstaname" title="定陵"><a class="popoverchart ppleft" href="javascript:;" staid="1002"
+                                              data-original-title="" title="">定陵</a></div>
+    </td>
     <td>50 ug/m<sup>3</sup></td>
     <td>162 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #eb8a14;" title="较不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者应减少长时间、高强度的户外锻炼 - 首要污染物 PM2.5">137</span></td>
+    <td><span class="label pmdata" style="background-color: #eb8a14;"
+              title="较不健康 - 儿童、老年人及心脏病、呼吸系统疾病患者应减少长时间、高强度的户外锻炼 - 首要污染物 PM2.5">137</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="密云水库"><a class="popoverchart ppleft" href="javascript:;" staid="9011" data-original-title="" title="">密云水库</a></div></td>
+    <td>
+        <div class="allstaname" title="密云水库"><a class="popoverchart ppleft" href="javascript:;" staid="9011"
+                                                data-original-title="" title="">密云水库</a></div>
+    </td>
     <td>34 ug/m<sup>3</sup></td>
     <td>123 ug/m<sup>3</sup></td>
-    <td><span class="label pmdata" style="background-color: #FFFF93;" title="中 - 极少数异常敏感人群应减少户外活动 - 首要污染物 PM2.5">97</span></td>
+    <td><span class="label pmdata" style="background-color: #FFFF93;"
+              title="中 - 极少数异常敏感人群应减少户外活动 - 首要污染物 PM2.5">97</span></td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="房山"><a class="popoverchart ppleft" href="javascript:;" staid="9015" data-original-title="" title="">房山</a></div></td>
+    <td>
+        <div class="allstaname" title="房山"><a class="popoverchart ppleft" href="javascript:;" staid="9015"
+                                              data-original-title="" title="">房山</a></div>
+    </td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="前门"><a class="popoverchart ppleft" href="javascript:;" staid="9008" data-original-title="" title="">前门</a></div></td>
+    <td>
+        <div class="allstaname" title="前门"><a class="popoverchart ppleft" href="javascript:;" staid="9008"
+                                              data-original-title="" title="">前门</a></div>
+    </td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
 </tr>
 <tr>
-    <td><div class="allstaname" title="天坛"><a class="popoverchart ppleft" href="javascript:;" staid="1004" data-original-title="" title="">天坛</a></div></td>
+    <td>
+        <div class="allstaname" title="天坛"><a class="popoverchart ppleft" href="javascript:;" staid="1004"
+                                              data-original-title="" title="">天坛</a></div>
+    </td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
 </tr>
 </tbody>
-            </table>
-        </div>
-    </div>
+</table>
+</div>
+</div>
 
-    <div style="clear: both"></div>
+<div style="clear: both"></div>
 </div>
 </div>
 </div>
@@ -1396,7 +1547,7 @@ pt-decoration underline
 </div>
 </div>
 <div style="clear: both"></div>
-</div>
+
 </div>
 </div>
 </body>

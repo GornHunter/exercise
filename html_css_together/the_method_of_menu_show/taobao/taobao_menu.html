@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="下拉菜单，jquery"/>
+
+    <title>速度超快的菜单切换效果</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <style type="text/css">
+        .demo {
+            margin: 50px auto 0 auto;
+            width: 730px
+        }
+
+        .active {
+            position: relative
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            z-index: 1000;
+            float: left;
+            min-width: 120px;
+            padding: 5px 0;
+            margin: 2px 0 0;
+            list-style: none;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu li {
+            height: 24px;
+            line-height: 24px;
+            text-align: center
+        }
+
+        .dropdown-menu li a {
+            display: block
+        }
+
+        .dropdown-menu li a:hover, .maintainHover {
+            color: #fff;
+            text-decoration: none;
+            background: #39f
+        }
+
+        .popover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1010;
+            display: none;
+            width: 320px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            -webkit-border-top-left-radius: 0px;
+            -webkit-border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            overflow: hidden;
+            padding: 1px 1px 1px 15px;
+            text-align: left;
+            white-space: normal;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .popover h3 {
+            height: 28px;
+            line-height: 28px;
+        }
+
+        .popover ul {
+            margin: 6px
+        }
+
+        .popover ul li {
+            height: 24px;
+            line-height: 24px
+        }
+
+        .popover ul li a {
+            margin: 6px;
+            color: #444
+        }
+
+        .popover ul li a.subm {
+            color: #f90;
+            font-weight: bold
+        }
+
+        .pop_cont {
+            margin: 6px
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="active">
+    <ul class="dropdown-menu" role="menu">
+        <li data-submenu-id="submenu-patas"><a href="#">服装服饰</a></li>
+        <li data-submenu-id="submenu-snub-nosed"><a href="#"> 箱包配饰</a></li>
+        <li data-submenu-id="submenu-duoc-langur"><a href="#">数码家电</a></li>
+        <li data-submenu-id="submenu-pygmy"><a href="#">美容护发</a></li>
+        <li data-submenu-id="submenu-tamarin"><a href="#">母婴用品</a></li>
+        <li data-submenu-id="submenu-monk"><a href="#">家居建材</a></li>
+        <li data-submenu-id="submenu-gabon"><a href="#">食品百货</a></li>
+        <li data-submenu-id="submenu-grivet"><a href="#">户外汽车</a></li>
+        <li data-submenu-id="submenu-red-leaf"><a href="#">文化玩乐</a></li>
+        <li data-submenu-id="submenu-king-colobus"><a href="#">生活服务</a></li>
+    </ul>
+</div>
+
+<div id="submenu-patas" class="popover">
+    <h3>服装服饰</h3>
+    <ul>
+        <li><a href="#" class="subm">女装</a> <a href="#">连衣裙</a> <a href="#"> 短袖T恤</a> <a href="#">背心裙</a> <a
+                href="#">开衫</a></li>
+        <li><a href="#" class="subm">男装</a> <a href="#">T恤</a> <a href="#">POLO</a> <a href="#">衬衫</a> <a
+                href="#">背心</a> <a href="#">牛仔裤</a></li>
+        <li><a href="#" class="subm">内衣</a> <a href="#">文胸</a> <a href="#">塑身</a> <a href="#">睡衣</a> <a href="#">内裤</a>
+        </li>
+        <li><a href="#" class="subm">女鞋</a> <a href="#">新品</a> <a href="#">罗马</a> <a href="#">凉鞋</a> <a href="#">拖鞋</a>
+        </li>
+    </ul>
+</div>
+<div id="submenu-snub-nosed" class="popover">
+    <h3>箱包配饰</h3>
+    <ul>
+        <li><a href="#" class="subm">箱包</a> <a href="#">女包</a> <a href="#"> 单肩</a> <a href="#">男包</a> <a href="#">旅行</a>
+            <a href="#">双肩</a></li>
+        <li><a href="#" class="subm">配饰</a> <a href="#">围巾披肩</a> <a href="#">遮阳帽</a> <a href="#">草帽</a> <a
+                href="#">皮带</a></li>
+        <li><a href="#" class="subm">饰品</a> <a href="#">项链</a> <a href="#">耳饰</a> <a href="#">发饰</a> <a href="#">手镯</a>
+            <a href="#">手链</a></li>
+        <li><a href="#" class="subm">眼镜</a> <a href="#">太阳镜</a> <a href="#">眼镜架</a> <a href="#">戒烟</a> <a
+                href="#">Zippo</a></li>
+    </ul>
+</div>
+<div id="submenu-duoc-langur" class="popover">
+    <h3>数码家电</h3>
+
+    <div class="pop_cont"><a href="#"><img src="images/ipad.jpg" alt=""></a></div>
+</div>
+<div id="submenu-pygmy" class="popover">
+    <h3>美容护发</h3>
+
+    <div class="pop_cont"><a href="#"><img src="images/xshui.jpg" alt=""></a></div>
+</div>
+<div id="submenu-tamarin" class="popover">
+    <h3>母婴用品</h3>
+
+    <div class="pop_cont"><a href="#"><img src="images/muying.jpg" alt=""></a></div>
+</div>
+<div id="submenu-monk" class="popover">
+    <h3>家居建材</h3>
+
+    <div class="pop_cont"><a href="#"><img src="images/taideng.jpg" alt=""></a></div>
+</div>
+<div id="submenu-gabon" class="popover">
+    <h3>食品百货</h3>
+
+    <div class="pop_cont"><a href="#"><img src="images/shipin.jpg" alt=""></a></div>
+</div>
+<div id="submenu-grivet" class="popover">
+    <h3>户外汽车</h3>
+
+    <div class="pop_cont"><a href="#"><img src="images/qiche.jpg" alt=""></a></div>
+</div>
+<div id="submenu-red-leaf" class="popover">
+    <h3>文化玩乐</h3>
+
+    <div class="pop_cont"><a href="#"><img src="images/hua.jpg" alt=""></a></div>
+</div>
+<div id="submenu-king-colobus" class="popover">
+    <h3>生活服务</h3>
+    <ul>
+        <li><a href="#" class="subm">网店服务</a> <a href="#">拍摄</a> <a href="#"> 纸箱</a> <a href="#">定制设计</a></li>
+        <li><a href="#" class="subm">吃喝玩乐</a> <a href="#">北京</a> <a href="#"> 广东</a> <a href="#">上海</a> <a
+                href="#">香港</a></li>
+        <li><a href="#" class="subm">折扣券</a> <a href="#">面包蛋糕</a> <a href="#">餐饮</a> <a href="#">演出赛事</a></li>
+        <li><a href="#" class="subm">房产</a> <a href="#">租房</a> <a href="#">房东房源</a> <a href="#">二手房</a></li>
+    </ul>
+</div>
+
+
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+<script type="text/javascript" src="jquery.menu-aim.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".dropdown-menu").menuAim({
+            activate: activateSubmenu,
+            deactivate: deactivateSubmenu
+        });
+    });
+    var $menu = $(".dropdown-menu");
+    function activateSubmenu(row) {
+        var $row = $(row),
+                submenuId = $row.data("submenuId"),
+                $submenu = $("#" + submenuId),
+                offset = $menu.offset(),
+                height = $menu.outerHeight(),
+                width = $menu.outerWidth();
+        $submenu.css({
+            display: "block",
+            top: offset.top,
+            left: offset.left + width - 5,  // main should overlay submenu
+            height: height - 4  // padding for main dropdown's arrow
+        });
+        $row.find("a").addClass("maintainHover");
+    }
+    function deactivateSubmenu(row) {
+        var $row = $(row),
+                submenuId = $row.data("submenuId"),
+                $submenu = $("#" + submenuId);
+        $submenu.css("display", "none");
+        $row.find("a").removeClass("maintainHover");
+    }
+    $(document).click(function () {
+        $(".popover").css("display", "none");
+    });
+</script>
+<p id="stat">
+</p>
+
+</body>
+</html>

@@ -2,8 +2,66 @@
 <html>
 <head>
     <title></title>
+    <style>
+
+        #hover-test {
+            border-radius: 10px;
+            width: 1200px;
+            overflow: hidden;
+        }
+
+
+        #hover-test li {
+            /*border-radius: 4px;*/
+            float: left;
+            transition: width 0.2s;
+            width: 200px;
+            height: 300px;
+            display: inline-block;
+            /*margin: 10px;*/
+        }
+
+        #hover-test li div {
+            border-radius: 10px;
+            width: 440px;
+            height: 300px;
+            background: blueviolet;
+            box-shadow: -5px 1px 3px #F3E2E2
+        }
+        #hover-test li:hover {
+            width: 440px;
+        }
+
+
+
+
+
+
+
+    </style>
 </head>
 <body>
+<ul id="hover-test">
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
+    <li>
+        <div></div>
+    </li>
 
+    <li>
+        <div></div>
+    </li>
+
+</ul>
 </body>
 </html>
